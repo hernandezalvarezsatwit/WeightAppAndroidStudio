@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculator">
+
+
+<!--    Guidelines-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideLine"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="25dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuideLine"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="25dp" />
+
+<!--    Title-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80dp" />
+
+<!--    Gender input bar-->
+    <RadioGroup
+        android:id="@+id/genderGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="@id/leftGuideLine"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideLine"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:text="@string/gender"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp">
+        </TextView>
+        <RadioButton
+            android:id="@+id/maleButton"
+            android:text="@string/male"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+        <RadioButton
+            android:id="@+id/femaleButton"
+            android:text="@string/female"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+    </RadioGroup>
+
+<!--    Height input bar-->
+    <LinearLayout
+        android:id="@+id/heightBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/genderGroup"
+        app:layout_constraintStart_toStartOf="@id/leftGuideLine"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:paddingLeft="16dp"
+            android:text="@string/height">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/feet">
+        </TextView>
+        <EditText
+            android:id="@+id/feetInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:inputType="number"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:background="@android:color/darker_gray">
+        </EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/inches">
+        </TextView>
+        <EditText
+            android:id="@+id/inchesInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:inputType="number"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:background="@android:color/darker_gray">
+        </EditText>
+    </LinearLayout>
+
+<!--    Calculate Button-->
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/heightBar"
+        app:layout_constraintStart_toStartOf="@id/leftGuideLine"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideLine"
+        android:layout_marginTop="80dp"
+        android:text="@string/calculate"
+        android:textSize="24sp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
